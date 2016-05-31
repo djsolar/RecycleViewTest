@@ -7,12 +7,14 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * Created by zhouyiran on 16/5/31.
  */
 public class GridAdapter extends RecyclerView.Adapter<GridAdapter.ViewHolder> {
 
+    private Random random = new Random();
     private List<String> chars;
     public GridAdapter() {
         chars = new ArrayList<>();
@@ -29,6 +31,9 @@ public class GridAdapter extends RecyclerView.Adapter<GridAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(GridAdapter.ViewHolder holder, int position) {
+        int height = (int) ((random.nextFloat() + 0.1) * 600);
+        RecyclerView.LayoutParams parmas = new RecyclerView.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, height);
+        holder.itemView.setLayoutParams(parmas);
         holder.tv.setText(this.chars.get(position));
     }
 
