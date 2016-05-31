@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         LinearLayoutManager lm = new LinearLayoutManager(this);
         lm.setOrientation(LinearLayoutManager.HORIZONTAL);
         recyclerView.setLayoutManager(lm);
+        recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.HORIZONTAL_LIST));
         GalleryAdapter adapter = new GalleryAdapter(datas);
         adapter.setOnItemClickListener(new GalleryAdapter.onItemClickListener() {
             @Override

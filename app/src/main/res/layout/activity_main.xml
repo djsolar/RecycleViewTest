@@ -26,7 +26,6 @@
         android:layout_gravity="bottom"
         android:layout_width="match_parent"
         android:layout_height="120dp"
-        android:background="#ff0000"
         android:scrollbars="none">
 
     </com.test.recycleviewtest.MyRecycleView>
